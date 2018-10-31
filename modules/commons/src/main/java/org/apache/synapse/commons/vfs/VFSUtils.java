@@ -370,6 +370,18 @@ public class VFSUtils {
         }
         return false;
     }
+    
+    public static boolean hasMinimumAge(FileObject fo, Long minimumAge) {
+    	if(minimumAge != null) {
+    		try {
+				return fo.getContent().getLastModifiedTime() < (new Date().getTime() - minimumAge);
+			} catch (FileSystemException e) {
+				log.warn("Unable to determine if the file has the minimum age", e);
+			}
+    	}
+    	
+    	return true;
+    }
 
     public static void releaseFail(FileSystemManager fsManager, FileObject fo) {
         try {

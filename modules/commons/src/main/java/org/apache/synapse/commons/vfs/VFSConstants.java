@@ -197,4 +197,7 @@ public final class VFSConstants {
     public static final String EBCDIC_TYPE = "EBCDIC";
 
     public static final String CLUSTER_AWARE = "transport.vfs.ClusterAware";
+    
+    // The minimum age of the file before picking it up (in milliseconds)
+    public static final String MINIMUM_AGE = "transport.vfs.minimumAge";
 }
